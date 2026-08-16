@@ -1,350 +1,490 @@
+Mã "index.html" — An Home Made
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>An Home Made - Menu</title>
+<title>An Home Made</title>
 
 <style>
-*{box-sizing: border-box;
-    margin: 0;
-    padding: 0;}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-body{font-family: Arial, sans-serif;
-    background: #fffaf3;
-    color: #4b3528;
-    padding-bottom: 40px;}
+body {
+  font-family: Arial, sans-serif;
+  background: #fff8f0;
+  color: #4a3025;
+}
 
-.header ( background: #f3d6b3;
-    text-align: center;
-    padding: 28px 15px 22px;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;}
+header {
+  background: #8b4513;
+  color: white;
+  text-align: center;
+  padding: 28px 15px;
+}
 
-.logo {font-size: 32px;
-    font-weight: bold;
-    color: #7a4b2f;
-    margin-bottom: 8px;}
+header h1 {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
 
-.slogan {font-size: 15px;
-    color: #795548;}
+header p {
+  font-size: 16px;
+}
 
-.container{ width: 92%;
-    max-width: 600px;
-    margin: 25px auto;}
+.container {
+  max-width: 850px;
+  margin: 25px auto;
+  padding: 0 15px;
+}
 
-.section-title {text-align: center;
-    font-size: 23px;
-    color: #7a4b2f;
-    margin-bottom: 18px;}
+.section-title {
+  text-align: center;
+  color: #8b4513;
+  margin-bottom: 20px;
+  font-size: 25px;
+}
 
-.menu-item { background: white;
-    border-radius: 18px;
-    padding: 17px;
-    margin-bottom: 14px;
-    box-shadow: 0 4px 12px rgba(100, 70, 40, 0.10);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;}
+/* MENU */
 
-.item-name { font-size: 17px;
-    font-weight: bold;}
- .item-price {color: #c46b3c;
-    font-size: 17px;
-    font-weight: bold;
-    white-space: nowrap;}
+.menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
 
-.topping-box  background: #fff;
-    border-radius: 18px;
-    padding: 18px;
-    margin-top: 22px;
-    box-shadow: 0 4px 12px rgba(100, 70, 40, 0.10);}
+.item {
+  background: white;
+  border-radius: 15px;
+  padding: 18px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+  text-align: center;
+}
 
-.topping-title {font-size: 19px;
-    font-weight: bold;
-    color: #7a4b2f;
-    margin-bottom: 12px;}
-.topping {display: flex;
-    justify-content: space-between;
-    padding: 9px 0;
-    border-bottom: 1px solid #eee;}
+.item h3 {
+  color: #8b4513;
+  margin-bottom: 8px;
+}
 
-.topping:last-child { border-bottom: none;}
+.item p {
+  margin: 6px 0;
+}
 
-.order-button {display: block;
-    width: 100%;
-    margin-top: 25px;
-    padding: 17px;
-    border: none;
-    border-radius: 18px;
-    background: #7a9b59;
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    text-align: center;}
+.price {
+  color: #d35400;
+  font-weight: bold;
+  font-size: 18px;
+}
 
-.order-button:hover {background: #668747;}
-.note { text-align: center;
-    margin-top: 18px;
-    font-size: 13px;
-    color: #8b7568}
-.footer {text-align: center;
-    margin-top: 30px;
-    color: #8b7568;
-    font-size: 13px;}
+/* COMBO */
 
-/* FORM ĐẶT MÓN */
+.combo {
+  margin-top: 30px;
+}
 
-.modal {display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.45);
-    overflow-y: auto;}
+.combo .item {
+  border: 2px solid #f0d3bd;
+}
 
-.modal-content {background: #fffaf3;
-    width: 92%;
-    max-width: 500px;
-    margin: 30px auto;
-    padding: 24px;
-    border-radius: 22px;
-    position: relative;}
+.combo-price {
+  color: #d35400;
+  font-weight: bold;
+  margin-top: 10px;
+}
 
-.close {position: absolute;
-    right: 18px;
-    top: 12px;
-    font-size: 30px;
-    color: #795548;
-    cursor: pointer;}
+/* ORDER */
 
-.modal-title { text-align: center;
-    color: #7a4b2f;
-    font-size: 24px;
-    margin-bottom: 20px;}
+.order-box {
+  background: white;
+  margin-top: 30px;
+  padding: 22px;
+  border-radius: 15px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
 
-label {display: block;
-    margin-top: 13px;
-    margin-bottom: 6px;
-    font-weight: bold;}
+.order-box h2 {
+  text-align: center;
+  color: #8b4513;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
 
 input,
 select,
-textarea {width: 100%;
-    padding: 12px;
-    border: 1px solid #ddc8b5;
-    border-radius: 12px;
-    font-size: 15px;
-    background: white;}
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d8c3b5;
+  border-radius: 9px;
+  font-size: 16px;
+  background: #fffdfb;
+}
 
-textarea {min-height: 80px;
-    resize: vertical;}
-.submit-button {width: 100%;
-    margin-top: 20px;
-    padding: 15px;
-    border: none;
-    border-radius: 15px;
-    background: #7a9b59;
-    color: white;
-    font-size: 17px;
-    font-weight: bold;
-    cursor: pointer;}
+textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: #8b4513;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #6f350f;
+}
+
+.total {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  background: #fff3e8;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: #d35400;
+}
+
+footer {
+  text-align: center;
+  margin-top: 30px;
+  padding: 22px;
+  background: #8b4513;
+  color: white;
+}
 </style>
 </head>
 
 <body>
 
-<header class="header">
-    <div class="logo"> An Home Made</div>
-    <div class="slogan">Nước ngon nhà làm – Tươi mỗi ngày </div>
+<header>
+  <h1>🍱 An Home Made</h1>
+  <p>Cơm nhà – Đồ uống homemade – Gửi trọn yêu thương</p>
 </header>
 
-<main class="container">
+<div class="container">
 
-    <h2 class="section-title"> MENU NƯỚC</h2>
+  <!-- MENU -->
 
-    <div class="menu-item">
-        <span class="item-name"> Trà Tắc</span>
-        <span class="item-price">15K</span>
+  <h2 class="section-title">🌷 Menu hôm nay</h2>
+
+  <div class="menu">
+
+    <div class="item">
+      <h3>🍚 Cơm nhà</h3>
+      <p>Cơm ngon, nóng hổi</p>
+      <p class="price">35.000đ</p>
     </div>
 
-    <div class="menu-item">
-        <span class="item-name"> Trà Chanh</span>
-        <span class="item-price">15K</span>
+    <div class="item">
+      <h3>🥤 Trà đào</h3>
+      <p>Thanh mát, thơm dịu</p>
+      <p class="price">25.000đ / cốc</p>
     </div>
 
-    <div class="menu-item">
-        <span class="item-name"> Trà Mận</span>
-        <span class="item-price">22K</span>
+    <div class="item">
+      <h3>🍋 Trà chanh</h3>
+      <p>Chua nhẹ, dễ uống</p>
+      <p class="price">20.000đ / cốc</p>
     </div>
 
-    <div class="menu-item">
-        <span class="item-name"> Trà Hoa Quả Nhiệt Đới</span>
-        <span class="item-price">25K</span>
+    <div class="item">
+      <h3>🍓 Trà dâu</h3>
+      <p>Thơm ngon, ngọt dịu</p>
+      <p class="price">25.000đ / cốc</p>
     </div>
 
-    <div class="menu-item">
-        <span class="item-name"> Chanh Xí Muội</span>
-        <span class="item-price">20K</span>
+  </div>
+
+  <!-- COMBO -->
+
+  <div class="combo">
+
+    <h2 class="section-title">🎁 COMBO TIẾT KIỆM</h2>
+
+    <div class="menu">
+
+      <div class="item">
+        <h3>🥤 Combo 2 cốc</h3>
+        <p>Giảm <strong>5%</strong></p>
+        <p class="combo-price">Tự động tính giá</p>
+      </div>
+
+      <div class="item">
+        <h3>🥤 Combo 5 cốc</h3>
+        <p>Giảm <strong>10%</strong></p>
+        <p class="combo-price">Tự động tính giá</p>
+      </div>
+
+      <div class="item">
+        <h3>🥤 Combo 10 cốc</h3>
+        <p>Giảm <strong>15%</strong></p>
+        <p class="combo-price">Tự động tính giá</p>
+      </div>
+
     </div>
 
-    <div class="menu-item">
-        <span class="item-name"> Rau Má Tươi</span>
-        <span class="item-price">20K</span>
+  </div>
+
+  <!-- ORDER -->
+
+  <div class="order-box">
+
+    <h2>🛒 Đặt món</h2>
+
+    <label for="name">Tên:</label>
+    <input
+      type="text"
+      id="name"
+      placeholder="Nhập tên của bạn"
+    >
+
+    <label for="phone">SĐT:</label>
+    <input
+      type="tel"
+      id="phone"
+      placeholder="Nhập số điện thoại"
+    >
+
+    <label for="drink">Món:</label>
+
+    <select id="drink" onchange="calculateTotal()">
+
+      <option value="">-- Chọn món --</option>
+
+      <option value="35000">
+        Cơm nhà - 35.000đ
+      </option>
+
+      <option value="25000">
+        Trà đào - 25.000đ / cốc
+      </option>
+
+      <option value="20000">
+        Trà chanh - 20.000đ / cốc
+      </option>
+
+      <option value="25000">
+        Trà dâu - 25.000đ / cốc
+      </option>
+
+    </select>
+
+    <label for="combo">Combo:</label>
+
+    <select id="combo" onchange="calculateTotal()">
+
+      <option value="1">
+        1 cốc - Không giảm
+      </option>
+
+      <option value="2">
+        Combo 2 cốc - Giảm 5%
+      </option>
+
+      <option value="5">
+        Combo 5 cốc - Giảm 10%
+      </option>
+
+      <option value="10">
+        Combo 10 cốc - Giảm 15%
+      </option>
+
+    </select>
+
+    <label for="topping">Topping:</label>
+
+    <input
+      type="text"
+      id="topping"
+      placeholder="Ví dụ: trân châu, thạch..."
+    >
+
+    <label for="address">Địa chỉ:</label>
+
+    <input
+      type="text"
+      id="address"
+      placeholder="Nhập địa chỉ nhận hàng"
+    >
+
+    <label for="note">Ghi chú:</label>
+
+    <textarea
+      id="note"
+      placeholder="Ví dụ: ít đá, ít ngọt..."
+    ></textarea>
+
+    <div class="total" id="total">
+      Tổng tiền: 0đ
     </div>
 
-    <div class="topping-box">
-        <div class="topping-title"> TOPPING</div>
-
-        <div class="topping">
-            <span> Thạch dừa</span>
-            <strong>+5K</strong>
-        </div>
-
-        <div class="topping">
-            <span> Trân châu</span>
-            <strong>+5K</strong>
-        </div>
-    </div>
-
-    <button class="order-button" onclick="openOrder()">
-        ĐẶT MÓN NGAY
+    <button onclick="submitOrder()">
+      💝 Đặt món ngay
     </button>
 
-    <div class="note">
-         Cảm ơn bạn đã ủng hộ An Home Made!
-    </div>
-
-</main>
-
-<footer class="footer">
-    © 2026 An Home Made
-</footer>
-
-
-<!-- FORM ĐẶT MÓN -->
-
-<div id="orderModal" class="modal">
-
-    <div class="modal-content">
-
-        <span class="close" onclick="closeOrder()">&times;</span>
-
-        <h2 class="modal-title"> Đặt món</h2>
-
-        <form onsubmit="submitOrder(event)">
-
-            <label for="name">Tên của bạn</label>
-            <input
-                type="text"
-                id="name"
-                placeholder="Nhập tên"
-                required
-            >
-
-            <label for="phone">Số điện thoại</label>
-            <input
-                type="tel"
-                id="phone"
-                placeholder="Nhập số điện thoại"
-                required
-            >
-
-            <label for="drink">Chọn món</label>
-            <select id="drink" required>
-                <option value="">-- Chọn món --</option>
-                <option>Trà Tắc - 15K</option>
-                <option>Trà Chanh - 15K</option>
-                <option>Trà Mận - 22K</option>
-                <option>Trà Hoa Quả Nhiệt Đới - 25K</option>
-                <option>Chanh Xí Muội - 20K</option>
-                <option>Rau Má Tươi - 20K</option>
-            </select>
-
-            <label for="quantity">Số lượng</label>
-            <input
-                type="number"
-                id="quantity"
-                min="1"
-                value="1"
-                required
-            >
-
-            <label for="topping">Topping</label>
-            <select id="topping">
-                <option>Không thêm topping</option>
-                <option>Thạch dừa +5K</option>
-                <option>Trân châu +5K</option>
-            </select>
-
-            <label for="address">Địa chỉ nhận hàng</label>
-            <textarea
-                id="address"
-                placeholder="Nhập địa chỉ nhận hàng"
-                required
-            ></textarea>
-
-            <label for="note">Ghi chú</label>
-            <textarea
-                id="note"
-                placeholder="Ví dụ: ít đá, ít ngọt..."
-            ></textarea>
-
-            <button class="submit-button" type="submit">
-                 XÁC NHẬN ĐẶT MÓN
-            </button>
-
-        </form>
-
-    </div>
+  </div>
 
 </div>
 
+<footer>
+
+  <p>© 2026 An Home Made</p>
+
+  <p>
+    Nhà làm – Tươi ngon – Tận tâm ❤️
+  </p>
+
+</footer>
 
 <script>
 
-function openOrder() {
-    document.getElementById("orderModal").style.display = "block";
+function calculateTotal() {
+
+  const price =
+    Number(document.getElementById("drink").value);
+
+  const combo =
+    Number(document.getElementById("combo").value);
+
+  if (!price || !combo) {
+
+    document.getElementById("total").innerText =
+      "Tổng tiền: 0đ";
+
+    return;
+  }
+
+  let discount = 0;
+
+  if (combo === 2) {
+    discount = 0.05;
+  }
+
+  if (combo === 5) {
+    discount = 0.10;
+  }
+
+  if (combo === 10) {
+    discount = 0.15;
+  }
+
+  const originalPrice = price * combo;
+
+  const finalPrice =
+    originalPrice * (1 - discount);
+
+  document.getElementById("total").innerText =
+    "Tổng tiền: " +
+    finalPrice.toLocaleString("vi-VN") +
+    "đ";
+
 }
 
-function closeOrder() {
-    document.getElementById("orderModal").style.display = "none";
-}
 
-window.onclick = function(event) {
-    const modal = document.getElementById("orderModal");
+function submitOrder() {
 
-    if (event.target === modal) {
-        modal.style.display = "none";
-    }
-}
+  const name =
+    document.getElementById("name").value;
 
-function submitOrder(event) {
+  const phone =
+    document.getElementById("phone").value;
 
-    event.preventDefault();
+  const drinkSelect =
+    document.getElementById("drink");
 
-    const name = document.getElementById("name").value;
-    const phone = document.getElementById("phone").value;
-    const drink = document.getElementById("drink").value;
-    const quantity = document.getElementById("quantity").value;
-    const topping = document.getElementById("topping").value;
-    const address = document.getElementById("address").value;
-    const note = document.getElementById("note").value;
+  const drink =
+    drinkSelect.options[
+      drinkSelect.selectedIndex
+    ].text;
+
+  const combo =
+    document.getElementById("combo").value;
+
+  const topping =
+    document.getElementById("topping").value;
+
+  const address =
+    document.getElementById("address").value;
+
+  const note =
+    document.getElementById("note").value;
+
+  const price =
+    Number(drinkSelect.value);
+
+  if (!name || !phone || !price || !address) {
 
     alert(
-        "Đã nhận thông tin đặt món! \n\n" +
-        "Tên: " + name +
-        "\nSĐT: " + phone +
-        "\nMón: " + drink +
-        "\nSố lượng: " + quantity +
-        "\nTopping: " + topping +
-        "\nĐịa chỉ: " + address +
-        "\nGhi chú: " + note
+      "Vui lòng điền đầy đủ Tên, SĐT, Món và Địa chỉ nhé!"
     );
+
+    return;
+  }
+
+  let discount = 0;
+
+  if (Number(combo) === 2) {
+    discount = 0.05;
+  }
+
+  if (Number(combo) === 5) {
+    discount = 0.10;
+  }
+
+  if (Number(combo) === 10) {
+    discount = 0.15;
+  }
+
+  const total =
+    price * Number(combo) * (1 - discount);
+
+  alert(
+
+    "🎉 ĐÃ NHẬN ĐƠN HÀNG!\n\n" +
+
+    "Tên: " + name + "\n" +
+
+    "SĐT: " + phone + "\n" +
+
+    "Món: " + drink + "\n" +
+
+    "Số cốc: " + combo + "\n" +
+
+    "Giảm giá: " +
+    (discount * 100) + "%\n" +
+
+    "Topping: " + topping + "\n" +
+
+    "Địa chỉ: " + address + "\n" +
+
+    "Ghi chú: " + note + "\n\n" +
+
+    "💰 Tổng tiền: " +
+    total.toLocaleString("vi-VN") +
+    "đ"
+
+  );
+
 }
 
 </script>
