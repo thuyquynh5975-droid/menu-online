@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>An Home Made - Menu</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fffaf2;
+    color: #3d3025;
+    padding-bottom: 40px;
+}
+
+/* PHẦN ĐẦU */
+.header {
+    background: linear-gradient(135deg, #fff0d2, #f7dca8);
+    text-align: center;
+    padding: 28px 15px 24px;
+    border-radius: 0 0 28px 28px;
+}
+
+.logo {
+    width: 82px;
+    height: 82px;
+    margin: auto;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 42px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+}
+
+.header h1 {
+    margin-top: 12px;
+    font-size: 29px;
+    color: #6b4726;
+}
+
+.header p {
+    margin-top: 6px;
+    font-size: 15px;
+    color: #795d42;
+}
+
+/* MENU */
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px 15px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 22px;
+    color: #6b4726;
+    margin: 10px 0 18px;
+}
+
+.menu-item {
+    background: white;
+    border-radius: 18px;
+    margin-bottom: 13px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 12px rgba(100,70,30,0.09);
+    border: 1px solid #f2dfc4;
+}
+
+.item-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.item-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: #fff1d7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 26px;
+}
+
+.item-name {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.item-desc {
+    font-size: 12px;
+    color: #8c7967;
+    margin-top: 4px;
+}
+
+.price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #c56b32;
+    white-space: nowrap;
+}
+
+/* TOPPING */
+.topping-box {
+    background: #fff;
+    border: 2px dashed #e5bd83;
+    border-radius: 18px;
+    padding: 17px;
+    margin-top: 20px;
+}
+
+.topping-box h3 {
+    color: #6b4726;
+    margin-bottom: 10px;
+}
+
+.topping {
+    display: flex;
+    justify-content: space-between;
+    padding: 7px 0;
+    font-size: 15px;
+}
+
+/* NÚT ĐẶT MÓN */
+.order-button {
+    display: block;
+    width: 100%;
+    border: none;
+    background: #d8793b;
+    color: white;
+    font-size: 19px;
+    font-weight: bold;
+    padding: 16px;
+    border-radius: 18px;
+    margin-top: 25px;
+    cursor: pointer;
+    box-shadow: 0 5px 12px rgba(180,90,35,0.25);
+}
+
+.order-button:active {
+    transform: scale(0.98);
+}
+
+/* KHU VỰC ĐẶT MÓN */
+#order {
+    display: none;
+    margin-top: 25px;
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(100,70,30,0.1);
+}
+
+#order h2 {
+    text-align: center;
+    color: #6b4726;
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    margin-top: 13px;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #dfc9ad;
+    border-radius: 12px;
+    font-size: 15px;
+    background: #fffdf9;
+}
+
+textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.send-button {
+    width: 100%;
+    border: none;
+    background: #5d9b58;
+    color: white;
+    font-weight: bold;
+    font-size: 17px;
+    padding: 14px;
+    border-radius: 14px;
+    margin-top: 18px;
+    cursor: pointer;
+}
+
+/* CHÂN TRANG */
+.footer {
+    text-align: center;
+    margin-top: 30px;
+    color: #8b7561;
+    font-size: 13px;
+    line-height: 1.6;
+}
+</style>
+</head>
+
+<body>
+
+<!-- ĐẦU MENU -->
+<header class="header">
+
+    <div class="logo">🥤</div>
+
+    <h1>AN HOME MADE</h1>
+
+    <p>Đồ uống nhà làm • Tươi ngon mỗi ngày</p>
+
+</header>
+
+
+<div class="container">
+
+    <h2 class="section-title">🌿 MENU ĐỒ UỐNG 🌿</h2>
+
+
+    <!-- MÓN 1 -->
+    <div class="menu-item">
+
+        <div class="item-info">
+
+            <div class="item-icon">🍋</div>
+
+            <div>
+                <div class="item-name">Trà Tắc</div>
+                <div class="item-desc">Thanh mát • chua ngọt</div>
+            </div>
+
+        </div>
+
+        <div class="price">15K</div>
+
+    </div>
+
+
+    <!-- MÓN 2 -->
+    <div class="menu-item">
+
+        <div class="item-info">
+
+            <div class="item-icon">🍵</div>
+
+            <div>
+                <div class="item-name">Trà Chanh</div>
+                <div class="item-desc">Thơm dịu • giải khát</div>
+            </div>
+
+        </div>
+
+        <div class="price">15K</div>
+
+    </div>
+
+
+    <!-- MÓN 3 -->
+    <div class="menu-item">
+
+        <div class="item-info">
+
+            <div class="item-icon">🍑</div>
+
+            <div>
+                <div class="item-name">Trà Mận</div>
+                <div class="item-desc">Vị mận tự nhiên • thơm ngon</div>
+            </div>
+
+        </div>
+
+        <div class="price">22K</div>
+
+    </div>
+
+
+    <!-- MÓN 4 -->
+    <div class="menu-item">
+
+        <div class="item-info">
+
+            <div class="item-icon">🍓</div>
+
+            <div>
+                <div class="item-name">Trà Hoa Quả Nhiệt Đới</div>
+                <div class="item-desc">Thơm mát • nhiều loại trái cây</div>
+            </div>
+
+        </div>
+
+        <div class="price">25K</div>
+
+    </div>
+
+
+    <!-- MÓN 5 -->
+    <div class="menu-item">
+
+        <div class="item-info">
+
+            <div class="item-icon">🧂</div>
+
+            <div>
+                <div class="item-name">Chanh Xí Muội</div>
+                <div class="item-desc">Chua ngọt • đậm vị xí muội</div>
+            </div>
+
+        </div>
+
+        <div class="price">20K</div>
+
+    </div>
+
+
+    <!-- MÓN 6 -->
+    <div class="menu-item">
+
+        <div class="item-info">
+
+            <div class="item-icon">🌱</div>
+
+            <div>
+                <div class="item-name">Rau Má Tươi</div>
+                <div class="item-desc">Rau má xay tươi mỗi ngày</div>
+            </div>
+
+        </div>
+
+        <div class="price">20K</div>
+
+    </div>
+
+
+    <!-- TOPPING -->
+    <div class="topping-box">
+
+        <h3>🧋 TOPPING</h3>
+
+        <div class="topping">
+            <span>🥥 Thạch dừa</span>
+            <strong>+5K</strong>
+        </div>
+
+        <div class="topping">
+            <span>⚫ Trân châu</span>
+            <strong>+5K</strong>
+        </div>
+
+    </div>
+
+
+    <!-- NÚT ĐẶT MÓN -->
+    <button class="order-button" onclick="showOrder()">
+        🛒 ĐẶT MÓN NGAY
+    </button>
+
+
+    <!-- FORM ĐẶT MÓN -->
+    <div id="order">
+
+        <h2>🛍️ ĐẶT MÓN</h2>
+
+        <label>Tên của bạn</label>
+        <input id="customerName" type="text" placeholder="Nhập tên">
+
+        <label>Số điện thoại</label>
+        <input id="phone" type="tel" placeholder="Nhập số điện thoại">
+
+        <label>Món muốn đặt</label>
+
+        <select id="drink">
+
+            <option>Trà Tắc - 15K</option>
+            <option>Trà Chanh - 15K</option>
+            <option>Trà Mận - 22K</option>
+            <option>Trà Hoa Quả Nhiệt Đới - 25K</option>
+            <option>Chanh Xí Muội - 20K</option>
+            <option>Rau Má Tươi - 20K</option>
+
+        </select>
+
+
+        <label>Số lượng</label>
+
+        <input id="quantity"
+               type="number"
+               min="1"
+               value="1">
+
+
+        <label>Topping</label>
+
+        <select id="topping">
+
+            <option>Không topping</option>
+            <option>Thạch dừa +5K</option>
+            <option>Trân châu +5K</option>
+            <option>Thạch dừa + Trân châu +10K</option>
+
+        </select>
+
+
+        <label>Ghi chú</label>
+
+        <textarea id="note"
+                  placeholder="Ví dụ: ít đá, ít ngọt..."></textarea>
+
+
+        <button class="send-button" onclick="sendOrder()">
+            📩 GỬI ĐƠN
+        </button>
+
+    </div>
+
+
+    <div class="footer">
+
+        🌿 An Home Made 🌿<br>
+        Đồ uống nhà làm – Tươi ngon & tận tâm<br>
+        Cảm ơn bạn đã ủng hộ ❤️
+
+    </div>
+
+</div>
+
+
+<script>
+
+function showOrder() {
+
+    const order = document.getElementById("order");
+
+    order.style.display = "block";
+
+    order.scrollIntoView({
+        behavior: "smooth"
+    });
+
+}
+
+
+function sendOrder() {
+
+    const name =
+        document.getElementById("customerName").value;
+
+    const phone =
+        document.getElementById("phone").value;
+
+    const drink =
+        document.getElementById("drink").value;
+
+    const quantity =
+        document.getElementById("quantity").value;
+
+    const topping =
+        document.getElementById("topping").value;
+
+    const note =
+        document.getElementById("note").value;
+
+
+    if (name === "" || phone === "") {
+
+        alert("Bạn vui lòng nhập tên và số điện thoại nhé ❤️");
+
+        return;
+
+    }
+
+
+    const message =
+        "ĐƠN HÀNG AN HOME MADE%0A%0A" +
+        "Tên: " + name + "%0A" +
+        "SĐT: " + phone + "%0A" +
+        "Món: " + drink + "%0A" +
+        "Số lượng: " + quantity + "%0A" +
+        "Topping: " + topping + "%0A" +
+        "Ghi chú: " + note;
+
+
+    /*
+      TẠM THỜI HIỂN THỊ ĐƠN HÀNG.
+      Khi bạn đưa mình số Zalo/SĐT nhận đơn,
+      mình sẽ chỉnh nút này để gửi đơn cho bạn.
+    */
+
+    alert(
+        "Đã nhận thông tin đặt món! ❤️\n\n" +
+        "Món: " + drink +
+        "\nSố lượng: " + quantity +
+        "\nTopping: " + topping +
+        "\n\nMình sẽ chỉnh bước gửi đơn trực tiếp cho bạn sau."
+    );
+
+}
+
+</script>
+
+</body>
+</html>
